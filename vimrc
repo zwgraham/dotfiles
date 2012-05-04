@@ -3,7 +3,7 @@ set nocompatible            "ensure not in vi-compatibility mode
 set background=dark         "more for gvim than anything
 syntax on                   "syntax hilighting
 filetype plugin indent on   "load filetype plugin and indent settings
-set autochdir "always switch to the current file directory
+set autochdir
 set backspace=indent,eol,start " make backspace more flexible
 set backup " make backup files
 set backupdir=~/.vim/backup " keep backup files here
@@ -42,11 +42,6 @@ set statusline=%F%m%r%h%w[%{&ff}]%y[%p%%][%l:%L]
 
 
 "folding
-set foldenable " Turn on folding
-set foldmarker={,} " fold c style code
-set foldmethod=marker "fold on the marker
-set foldlevel=100 "dont autofold anything but can fold manually
-set foldopen=block,hor,mark,percent,quickfix,tag "movements that open a fold
 
 
 
@@ -59,7 +54,6 @@ map <F12> ggVGg? "rot13 =)
 
 
 "this is from :mkvimrc 
-version 6.0
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
@@ -67,16 +61,11 @@ nmap gx <Plug>NetrwBrowseX
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
 let &cpo=s:cpo_save
 unlet s:cpo_save
-set backspace=indent,eol,start
 set cscopeprg=/usr/bin/cscope
 set cscopetag
 set cscopeverbose
-set fileencodings=ucs-bom,utf-8,latin1
-set formatoptions=tcql
 set guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
 set helplang=en
-set history=50
-set hlsearch
-set ruler
+set history=100
 set viminfo='20,\"50
 " vim: set ft=vim :
