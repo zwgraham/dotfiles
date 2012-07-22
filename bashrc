@@ -6,6 +6,8 @@ fi
 
 # User specific aliases and functions
 set -o vi #represent
+export PAGER=/usr/bin/less
+export EDITOR=/usr/bin/vim
 if [[ $(hostname) == "overmind" ]]
 then
     #need pythonpath specified to use gnuradio, etc
