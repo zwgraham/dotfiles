@@ -2,6 +2,7 @@ set number
 set nocompatible            "ensure not in vi-compatibility mode
 set background=dark         "more for gvim than anything
 syntax on                   "syntax hilighting
+call pathogen#infect()      "https://github.com/tpope/vim-pathogen
 filetype plugin indent on   "load filetype plugin and indent settings
 set autochdir
 set backspace=indent,eol,start " make backspace more flexible
