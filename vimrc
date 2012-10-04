@@ -1,3 +1,4 @@
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 set number
 set nocompatible            "ensure not in vi-compatibility mode
 set background=dark         "more for gvim than anything
