@@ -4,14 +4,19 @@
 
 [core]
 	editor = /usr/bin/vim
-	pager = /usr/bin/less
+    pager = /usr/bin/less
+
+
+
 [color]
 	pager = true
 	status = true
 	diff = true
+
 [diff]
 	tool = vimdiff
 [difftool]
 	prompt = false
 [alias]
 	d = difftool
+
