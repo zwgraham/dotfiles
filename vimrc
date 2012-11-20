@@ -15,7 +15,7 @@ set noerrorbells "stay out of my /dev/dsp !!!!!
 set wildmenu "ride on the wild side
 set wildignore=*.o,*.pyc,*.jpg,*.gif,*.png,*.out
 set wildmode=list:longest
-
+let mapleader=","
 set lazyredraw "do not redraw while running macros
 set tabstop=4
 set shiftwidth=4
@@ -41,14 +41,16 @@ set statusline=%F%m%r%h%w[%{&ff}]%y[%p%%][%l:%L]
 "              +-- full path to file in the buffer
 
 
-
-
 "folding
 
 
 
 "mappings
 map <F12> ggVGg? "rot13 =)
+"toggle 'set list'
+nmap <leader>l :set list!<CR> 
+set listchars=tab:▸\ ,eol:¬   "vimcasts show invisibles
+
 
 
 
