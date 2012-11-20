@@ -9,3 +9,9 @@
 	pager = true
 	status = true
 	diff = true
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool

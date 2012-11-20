@@ -4,6 +4,11 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+
+if [ -d ~/src/android-sdk-linux/ ]; then
+    export PATH=$~/src/android-sdk-linux/platform-tools:${PATH}
+fi
+
 # User specific aliases and functions
 set -o vi #represent
 
