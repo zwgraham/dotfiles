@@ -17,9 +17,7 @@ set wildignore=*.o,*.pyc,*.jpg,*.gif,*.png,*.out
 set wildmode=list:longest
 let mapleader=","
 set lazyredraw "do not redraw while running macros
-set tabstop=4
-set shiftwidth=4
-set expandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set cursorcolumn " highlight the column
 set incsearch "start searching while typing
 set laststatus=2 "always show the status line
