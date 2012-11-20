@@ -70,4 +70,11 @@ set guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
 set helplang=en
 set history=100
 set viminfo='20,\"50
+
+if has("autocmd")
+    "
+    filetype on
+    "
+    autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
+endif
 " vim: set ft=vim :
