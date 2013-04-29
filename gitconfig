@@ -19,4 +19,8 @@
 	prompt = false
 [alias]
 	d = difftool
+    lo = log --pretty=oneline
+    gap = add --patch
 
+[push]
+	default = simple
