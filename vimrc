@@ -5,7 +5,7 @@ set background=dark         "more for gvim than anything
 syntax on                   "syntax hilighting
 call pathogen#infect()      "https://github.com/tpope/vim-pathogen
 filetype plugin indent on   "load filetype plugin and indent settings
-set autochdir
+"set autochdir
 set backspace=indent,eol,start " make backspace more flexible
 set backup " make backup files
 set backupdir=~/.vim/backup " keep backup files here
