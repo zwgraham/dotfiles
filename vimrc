@@ -1,9 +1,11 @@
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 set number
 set nocompatible            "ensure not in vi-compatibility mode
 set background=dark         "more for gvim than anything
 syntax on                   "syntax hilighting
+call pathogen#infect()      "https://github.com/tpope/vim-pathogen
 filetype plugin indent on   "load filetype plugin and indent settings
-set autochdir
+"set autochdir
 set backspace=indent,eol,start " make backspace more flexible
 set backup " make backup files
 set backupdir=~/.vim/backup " keep backup files here
@@ -13,11 +15,9 @@ set noerrorbells "stay out of my /dev/dsp !!!!!
 set wildmenu "ride on the wild side
 set wildignore=*.o,*.pyc,*.jpg,*.gif,*.png,*.out
 set wildmode=list:longest
-
+let mapleader=","
 set lazyredraw "do not redraw while running macros
-set tabstop=4
-set shiftwidth=4
-set expandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set cursorcolumn " highlight the column
 set incsearch "start searching while typing
 set laststatus=2 "always show the status line
@@ -39,14 +39,16 @@ set statusline=%F%m%r%h%w[%{&ff}]%y[%p%%][%l:%L]
 "              +-- full path to file in the buffer
 
 
-
-
 "folding
 
 
 
 "mappings
 map <F12> ggVGg? "rot13 =)
+"toggle 'set list'
+nmap <leader>l :set list!<CR> 
+set listchars=tab:▸\ ,eol:¬   "vimcasts show invisibles
+
 
 
 
@@ -68,4 +70,11 @@ set guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
 set helplang=en
 set history=100
 set viminfo='20,\"50
+
+if has("autocmd")
+    "
+    filetype on
+    "
+    autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
+endif
 " vim: set ft=vim :

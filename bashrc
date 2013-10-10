@@ -4,10 +4,32 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+###########################
+#
+# $PATH setup
+#
+###########################
+PATH=${PATH}:~/.scripts
+if [ -d ~/src/android-sdk-linux ]; then
+    PATH=${PATH}:~/src/android-sdk-linux/platform-tools:~/src/android-sdk-linux/tools
+fi
+export PATH
+##########################
+#
+# IPython
+#
+##########################
+if [ -e ~/.vim/ftplugin/python/ipy.vim ]; then
+    stty stop unset  # we need c-s
+fi
+###########################
+#
 # User specific aliases and functions
+#
+###########################
 set -o vi #represent
-export PAGER=/usr/bin/less
 export EDITOR=/usr/bin/vim
+export PAGER=/usr/bin/less
 if [[ $(hostname) == "overmind" ]]
 then
     #need pythonpath specified to use gnuradio, etc
@@ -16,32 +38,4 @@ then
     export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig
 fi
 
-function linein-loopback () {
-    STATUS=$( pactl list modules |grep -B 1 module-loopback|grep Module|cut -d# -f2 ) 
-    echo $STATUS
-    if [[ x"$1" ==  x"status" ]] 
-    then 
-        if [[  -n "$STATUS" ]]  
-        then 
-            printf "Line-in to speaker loopback loaded as Pulse Audio Modile #%d\n" $STATUS
-        else
-            printf "Line-in to speaker loopback is not loaded\n"
-        fi
-    elif [[ x"$1" == x"on" ]]
-    then
-        if [[  -z "$STATUS" ]]
-        then
-            pactl load-module module-loopback
-        fi
-    elif [[ x"$1" == x"off" ]]
-    then
-        if [[ -n $STATUS ]]
-        then
-            for n in $STATUS
-            do
-                printf "Unloading Module %d\n" $n
-                pactl unload-module $n
-            done 
-        fi
-    fi
-}
+

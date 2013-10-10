@@ -1,7 +1,2 @@
 My personal dotfiles maintained across systems
 
-	for f in $DOTFILESDIR; do
-	ln -s ${DOTFILESDIR}/${f} ~/.${f} 
-	done
-
-
