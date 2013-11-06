@@ -1,6 +1,8 @@
 [user]
     name  = Zachary W. Graham
-    email = zack.graham@gmail.com
+# Personal? or Work related?
+#     email = zack.graham@gmail.com
+    email = zwgraham@soe.ucsc.edu
 
 [core]
 	editor = /usr/bin/vim
