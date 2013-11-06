@@ -77,4 +77,8 @@ if has("autocmd")
     "
     autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
 endif
+
+"plugin config
+"vim-flake8
+let g:flake8_max_line_length=110
 " vim: set ft=vim :
