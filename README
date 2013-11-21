@@ -5,10 +5,8 @@ I usually do something like the following to get things initialized:
 $ mkdir -p ~/src/
 $ cd ~/src
 $ git clone https://github.com/zwgraham/dotfiles.git dotfiles
-$ pushd dotfiles; git submodule init && git submodule update; popd
+$ cd dotfiles; git submodule init && git submodule update;
+$ mkdir -p vim/backup vim/tmp
 $ for f in gitconfig bashrc inputrc tmux.conf vim vimrc; do
 > ln -s ~/src/dotfiles/${f} ~/.${f}
 > done
-
-Honestly, I havent verified that the listing above works, copy-pasta at your own risk
-
