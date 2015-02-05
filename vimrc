@@ -79,6 +79,8 @@ if has("autocmd")
 endif
 
 "plugin config
+"vim-latex
+let g:tex_flavor='latex'
 "vim-flake8
 let g:flake8_max_line_length=110
 " vim: set ft=vim :
