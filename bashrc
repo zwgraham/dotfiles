@@ -32,4 +32,4 @@ set -o vi #represent
 export EDITOR=/usr/bin/vim
 export PAGER=/usr/bin/less
 
-
+alias glo="git log --oneline"
