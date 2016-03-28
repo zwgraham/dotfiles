@@ -1,4 +1,4 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+#runtime bundle/vim-pathogen/autoload/pathogen.vim
 set number
 set nocompatible            "ensure not in vi-compatibility mode
 set background=dark         "more for gvim than anything
@@ -49,12 +49,6 @@ map <F12> ggVGg? "rot13 =)
 nmap <leader>l :set list!<CR> 
 set listchars=tab:▸\ ,eol:¬   "vimcasts show invisibles
 
-
-
-
-
-
-
 "this is from :mkvimrc 
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
@@ -70,6 +64,30 @@ set guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
 set helplang=en
 set history=100
 set viminfo='20,\"50
+
+"helper functions
+function! DoPrettyXML()
+    "save the filetype so we can restore it later
+    let l:origft=&ft
+    set ft=
+    " delete the xml header if it exists. this will
+    " permit us to surround the document with fake tags
+    " without creating invalid xml.
+    1s/<?xml .*?>//e
+    " insert fake tags around the entire document
+    " this will permit us to prety-format excepts of XML that may contain
+    " multiple top-level elements
+    0put ='<PrettyXML>'
+    $put ='</PrettyXML>'
+    silent %!xmllint --format -
+    " xmllint will insert an <?xml?> header. it's easy enough to delete if you
+    " don't want it. delete the fake tags
+    2d
+    silent %<
+    1
+    exe "set ft=" . l:origft
+endfunction
+command! PrettyXML call DoPrettyXML()
 
 if has("autocmd")
     "
