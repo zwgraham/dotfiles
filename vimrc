@@ -17,7 +17,7 @@ set wildignore=*.o,*.pyc,*.jpg,*.gif,*.png,*.out
 set wildmode=list:longest
 let mapleader=","
 set lazyredraw "do not redraw while running macros
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set tabstop=4 softtabstop=4 shiftwidth=4
 set cursorcolumn " highlight the column
 set incsearch "start searching while typing
 set laststatus=2 "always show the status line
@@ -80,7 +80,7 @@ endif
 
 "plugin config
 "vim-latex
-let g:tex_flavor='latex'
+"let g:tex_flavor='latex'
 "vim-flake8
-let g:flake8_max_line_length=110
+"let g:flake8_max_line_length=110
 " vim: set ft=vim :
