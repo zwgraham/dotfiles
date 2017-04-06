@@ -76,6 +76,8 @@ if has("autocmd")
     filetype on
     "
     autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
+	"auto spellcheck on git commits
+	autocmd Filetype gitcommit setlocal spell spelllang=en_us textwidth=72
 endif
 
 "plugin config
